@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Portfolio {
   funds: { name: string; allocationPercentage: number }[];
@@ -10,9 +11,11 @@ interface PopupProps {
 }
 
 const Popup: React.FC<PopupProps> = ({ portfolio, onClose }) => {
+  const navigate = useNavigate();
+
   const handleClose = () => {
-    window.location.reload();  // This reloads the entire page
-    onClose();  // If you want to close the popup as well
+    navigate("/"); // Redirect to the homepage
+    onClose(); // Optional, if you still want to trigger the onClose callback as well
   };
 
   return (
@@ -24,7 +27,7 @@ const Popup: React.FC<PopupProps> = ({ portfolio, onClose }) => {
         >
           ×
         </button>
-        <h2 className="text-xl font-semibold mb-4 text-black">Random Portfolio</h2>
+        <h2 className="text-xl font-semibold mb-4 text-black">Portfolio</h2>
         <ul>
           {portfolio.funds.map((fund, index) => (
             <li key={index} className="mb-2 text-black">
