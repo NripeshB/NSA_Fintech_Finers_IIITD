@@ -72,7 +72,7 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8">S</h1>
+        <h1 className="text-3xl font-bold mb-8">MERN Stack Project</h1>
         
         <div className="bg-white p-6 rounded-lg shadow-md mb-8">
           <h2 className="text-xl font-semibold mb-4">Create New User</h2>
